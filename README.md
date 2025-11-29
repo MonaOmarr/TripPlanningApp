@@ -55,28 +55,6 @@ SharedPreferences + Gson
 
 DatePickerDialog
 
-📦 Project Structure
-com.example.tripplanner
-│
-├── MainActivity.java
-├── AddTaskActivity.java
-├── EditTaskActivity.java
-│
-├── adapters/
-│ └── TripTaskAdapter.java
-│
-├── models/
-│ └── TripTask.java
-│
-├── utils/
-│ └── PrefsManager.java
-│
-└── res/
-├── layout/
-├── drawable/
-├── mipmap/
-└── values/
-
 🔧 Data Storage
 
 The app uses:
