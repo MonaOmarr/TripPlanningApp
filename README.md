@@ -1,4 +1,4 @@
-#📌 Trip Planning App – Android Project
+📌 Trip Planning App – Android Project
 
 A simple and user-friendly Android application that allows users to create, manage, and organize trip-related tasks. The app supports adding tasks, editing them, deleting them, and searching through all saved tasks.
 All task data is stored locally using SharedPreferences with Gson for JSON serialization.
