@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    strings.xml
+    This resource file stores all user-visible text strings for the application.
+    Using string resources improves maintainability, supports localization,
+    and keeps UI text separate from the code.
+-->
+<resources>
+
+    <!--
+        Application name displayed on the launcher and toolbar.
+    -->
+    <string name="app_name">Trip Planning App</string>
+
+</resources>

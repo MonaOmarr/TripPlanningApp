@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    CoordinatorLayout:
+    Used as the root container to support Material Design components
+    such as FloatingActionButton with proper anchor behavior.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        Main content area holding the search bar and RecyclerView.
+        LinearLayout (vertical) used to stack components top-to-bottom.
+    -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!--
+            SearchView:
+            Allows the user to filter tasks by title or keywords.
+            Placed at the top for easy access.
+        -->
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search tasks..." />
+
+        <!--
+            RecyclerView:
+            Displays the full list of tasks dynamically.
+            Using layout_weight="1" makes it take all remaining space.
+        -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTasks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="8dp" />
+
+    </LinearLayout>
+
+    <!--
+        FloatingActionButton (FAB):
+        Primary action button used to add a new task.
+        Anchored to mainContent and positioned at bottom-end.
+        Uses Material Design styling.
+    -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:contentDescription="Add task"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:layout_anchor="@id/mainContent"
+        app:layout_anchorGravity="bottom|end" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

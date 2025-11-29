@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Scrollable layout for the Add Task screen.
+    Using ScrollView to avoid content clipping on small screens.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!--
+        Root container: holds all input fields vertically.
+    -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Task title input -->
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Task title" />
+
+        <!-- Category label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:layout_marginTop="12dp" />
+
+        <!--
+            RadioGroup for selecting task category.
+            Only one option can be chosen at a time.
+        -->
+        <RadioGroup
+            android:id="@+id/radioGroupCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Flight option -->
+            <RadioButton
+                android:id="@+id/radioFlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flight" />
+
+            <!-- Hotel option -->
+            <RadioButton
+                android:id="@+id/radioHotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotel" />
+
+            <!-- Packing option -->
+            <RadioButton
+                android:id="@+id/radioPacking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Packing" />
+
+        </RadioGroup>
+
+        <!--
+            Date selector (opens a DatePicker in activity code).
+            Styled as a clickable TextView.
+        -->
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select date"
+            android:padding="12dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="12dp" />
+
+        <!-- Budget input (optional numeric value) -->
+        <EditText
+            android:id="@+id/edtBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Budget (optional)"
+            android:layout_marginTop="12dp" />
+
+        <!-- Switch to mark task as important -->
+        <Switch
+            android:id="@+id/switchImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Important"
+            android:layout_marginTop="12dp" />
+
+        <!-- Checkbox to mark the task as already completed -->
+        <CheckBox
+            android:id="@+id/chkDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already done?"
+            android:layout_marginTop="8dp" />
+
+        <!-- Notes input field -->
+        <EditText
+            android:id="@+id/edtNotes"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Notes"
+            android:gravity="top"
+            android:layout_marginTop="12dp" />
+
+        <!-- Save button to submit the task -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save task"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

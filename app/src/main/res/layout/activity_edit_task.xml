@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Parent scrollable container to ensure all fields are accessible
+    even on smaller screens. Prevents content from being cut off.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Vertical layout containing all form elements -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Input field for the task title -->
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Task title"/>
+
+        <!-- Label above the category radio buttons -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:layout_marginTop="12dp"/>
+
+        <!--
+            Category selector: allows user to choose exactly one option.
+            Displayed horizontally.
+        -->
+        <RadioGroup
+            android:id="@+id/radioGroupCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Category: Flight -->
+            <RadioButton
+                android:id="@+id/radioFlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flight"/>
+
+            <!-- Category: Hotel -->
+            <RadioButton
+                android:id="@+id/radioHotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotel"/>
+
+            <!-- Category: Packing -->
+            <RadioButton
+                android:id="@+id/radioPacking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Packing"/>
+        </RadioGroup>
+
+        <!--
+            Date selector:
+            This TextView acts like a button and opens a DatePickerDialog
+            in the Activity. Background is styled to look clickable.
+        -->
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select date"
+            android:padding="12dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Optional numeric budget input -->
+        <EditText
+            android:id="@+id/edtBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Budget (optional)"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Switch to mark the task as important -->
+        <Switch
+            android:id="@+id/switchImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Important"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Checkbox for tasks already completed -->
+        <CheckBox
+            android:id="@+id/chkDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already done?"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Multi-line notes field (top-aligned) -->
+        <EditText
+            android:id="@+id/edtNotes"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Notes"
+            android:gravity="top"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Button to update existing task information -->
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update task"
+            android:layout_marginTop="16dp"/>
+
+        <!--
+            Button to delete the task.
+            Styled with red background and white text to indicate danger action.
+        -->
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete task"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"/>
+
+    </LinearLayout>
+</ScrollView>

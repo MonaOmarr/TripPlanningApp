@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    CardView:
+    Provides a Material-style card container for each task item in the RecyclerView.
+    Adds rounded corners and elevation for a clean and modern UI.
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="4dp">
+
+    <!--
+        Outer horizontal layout:
+        Contains the task icon, text information, and "Done" checkbox.
+    -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--
+            Task icon:
+            Shows a visual representation of the task category
+            (e.g., bag icon for packing, plane icon for flight, etc.).
+        -->
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_bag"
+            android:layout_marginEnd="8dp"/>
+
+        <!--
+            Vertical layout for all text fields:
+            Expands to fill available space using weight.
+        -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Task title (bold, larger text) -->
+            <TextView
+                android:id="@+id/txtTitle"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task title" />
+
+            <!-- Category display -->
+            <TextView
+                android:id="@+id/txtCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category" />
+
+            <!-- Task date -->
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01/01/2025" />
+
+            <!--
+                Important label:
+                Only shown when the task is marked as important.
+                Initially GONE and made visible in the adapter if needed.
+            -->
+            <TextView
+                android:id="@+id/txtImportant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IMPORTANT"
+                android:textColor="@android:color/holo_red_dark"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <!--
+            Done checkbox:
+            Indicates completion status.
+            Not clickable inside the list item to avoid interfering with row click.
+            State is set programmatically in the RecyclerView adapter.
+        -->
+        <CheckBox
+            android:id="@+id/chkDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
